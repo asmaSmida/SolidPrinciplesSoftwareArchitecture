@@ -1,0 +1,34 @@
+@startuml ressource
+interface Resource {
+  
+   findFree(): int
+  markBusy(resourceId:int):void
+  markFree(resourceId:int):void
+  
+}
+
+class ResourceAllocator {
+    - _locked: boolean
+   - opened: boolean
+   +allocate(resource : Resource):int
+    + free(resource : Resource,resourceId:int ): void
+ 
+}
+class SpaceResource implements Resource {
+  
+   +findFree(): int
+ + markBusy(resourceId:int):void
+ + markFree(resourceId:int):void
+}
+class TimeResource implements Resource{
+    
+   +findFree(): int
+ + markBusy(resourceId:int):void
+ + markFree(resourceId:int):void
+
+}
+
+
+ResourceAllocator --> Resource
+
+@enduml

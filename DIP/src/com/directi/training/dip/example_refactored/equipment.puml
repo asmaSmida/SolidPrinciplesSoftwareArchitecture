@@ -1,0 +1,41 @@
+@startuml car
+interface Equipment {
+
+  +turnOn():void
+  +turnOff():void
+
+  
+}
+
+class Button {
+    - _state:boolean
+      - _equipment:Equipment
+     + Button(equipment :Equipment)
+   
+
+    + toggle( ): void
+ 
+}
+class Fan implements Equipment{
+  - _speed:int
+   +turnOn():void
+  +turnOff():void
+  +getSpeed():int
+  +setSpeed(speed:int):void
+
+
+}
+class Lamp implements Equipment{
+  - _color:int
+   +turnOn():void
+  +turnOff():void
+  +getColor():int
+  +setColor(color:int):void
+
+
+}
+
+Button  -->  Equipment
+
+
+@enduml

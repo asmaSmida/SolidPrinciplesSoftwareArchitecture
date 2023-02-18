@@ -1,0 +1,24 @@
+@startuml ducks
+interface IDuck {
+  
+  + quack(): void
+  +swim():void
+}
+class ElectronicDuck implements IDuck{
+     + quack(): void
+     +swim():void
+    + turnOn(): void
+       + turnOff(): void
+}
+class Duck implements IDuck{
+    + quack(): void
+  +swim():void
+ 
+}
+class Pool{
+    + run(): void
+    + quack(): void
+    +swim():void
+}
+Pool --> IDuck
+@enduml
